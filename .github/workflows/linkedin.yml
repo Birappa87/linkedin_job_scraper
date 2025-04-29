@@ -1,9 +1,9 @@
-name: WorkFlow for NHS script
+name: WorkFlow for Linkedin script
 
 on:
-  push:            # <--- add this line to trigger on any push
+  push: 
   schedule:
-    - cron: '30 22 * * *' # Every day at 10:30 PM UTC => 4:00 AM IST
+    - cron: '30 22 * * *'
 
 jobs:
   build:

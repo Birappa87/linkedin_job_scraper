@@ -226,7 +226,10 @@ try:
     options.add_argument("--disable-gpu")
     options.add_argument("--window-size=1920,1080")
 
-    driver = webdriver.Chrome(service=webdriver.ChromeService(ChromeDriverManager().install()), options=options)
+    driver = webdriver.Chrome(
+        service=Service(ChromeDriverManager(version="131.0.6778.241").install()),
+        options=options
+    )
 
     # Apply stealth settings
     stealth(driver,
