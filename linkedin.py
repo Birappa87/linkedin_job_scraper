@@ -212,6 +212,7 @@ def remove_duplicates(jobs_list):
 # Setup Chrome with Stealth
 try:
     options = Options()
+    options.binary_location = "/usr/bin/google-chrome"
     options.add_argument("--start-maximized")
     options.add_argument("--disable-blink-features=AutomationControlled")
     options.add_argument("--disable-infobars")
@@ -220,7 +221,6 @@ try:
     options.add_argument("--lang=en-US")
     options.add_experimental_option("excludeSwitches", ["enable-automation"])
     options.add_experimental_option("useAutomationExtension", False)
-    options.add_argument(f"--user-data-dir={temp_dir}")
     
     # For GitHub Actions, we need to specify these additional options
     options.add_argument("--disable-gpu")
